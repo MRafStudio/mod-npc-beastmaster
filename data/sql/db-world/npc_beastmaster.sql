@@ -35,6 +35,12 @@ INSERT INTO `npc_text` (`ID`, `text0_0`) VALUES
 (601026, 'Greetings, $N.$b$bIf you\'re looking for a trustful companion to take on your travels, you have come to the right place. I can offer you a variety of tamed pets to choose from. I can also supply you with food so that you can take good care of your new friend.'),
 (601027, 'What kind of pet are you interested in?');
 
+-- NPC TEXT LOCALE
+DELETE FROM `npc_text_locale` WHERE `ID` IN (601026, 601027);
+INSERT INTO `npc_text_locale` (`ID`, `Locale`, `Text0_0`) VALUES (601026, 'ruRU', 'Приветствую, $N.$b$bЕсли вы ищете надежного спутника для путешествий, вы попали по адресу. Могу предложить вам на выбор множество прирученных питомцев. Я также могу снабдить вас едой, чтобы вы могли хорошо позаботиться о своем новом друге.');
+INSERT INTO `npc_text_locale` (`ID`, `Locale`, `Text0_0`) VALUES (601027, 'ruRU', 'Какой питомец вас интересует?');
+
+
 -- GOSSIP MENU
 DELETE FROM `gossip_menu` WHERE `MenuID` = 60102;
 INSERT INTO `gossip_menu` VALUES (60102, 68); -- Dummy gossip menu to prevent errors. Not used.
