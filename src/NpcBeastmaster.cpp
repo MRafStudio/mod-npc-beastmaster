@@ -103,7 +103,7 @@ void NpcBeastmaster::ShowMainMenu(Player* player, Creature* creature)
                 {
                 case LOCALE_ruRU:
                 {
-                    message = "Извините, но домашние животные предназначены только для охотников.";
+                    message = "Извините, но мои питомцы предназначены только для охотников.";
                     break;
                 }
                 default:
@@ -124,10 +124,12 @@ void NpcBeastmaster::ShowMainMenu(Player* player, Creature* creature)
         {
         case LOCALE_ruRU:
         {
-            messageExperience = Acore::StringFormatFmt("Извините {}, но вы должны достичь уровня {} прежде чем заводить домашнее животное.", player->GetName(), BeastMasterMinLevel);
+            messageExperience = Acore::StringFormatFmt("Извините {}, но вы должны достичь уровня {} прежде чем завести питомца.", player->GetName(), BeastMasterMinLevel);
+            break;
         }
         default:
             messageExperience = Acore::StringFormatFmt("Sorry {}, but you must reach level {} before adopting a pet.", player->GetName(), BeastMasterMinLevel);
+            break;
         }
         creature->Whisper(messageExperience.c_str(), LANG_UNIVERSAL, player);
         return;
@@ -147,13 +149,13 @@ void NpcBeastmaster::ShowMainMenu(Player* player, Creature* creature)
     {
     case LOCALE_ruRU:
     {
-        msgBrowsePets = "Обзор животных";
-        msgBrowseRarePets = "Обзор редких животных";
+        msgBrowsePets = "Обзор питомцев";
+        msgBrowseRarePets = "Обзор редких питомцев";
         msgBrowseExoticPets = "Обзор экзотических животных";
-        msgBrowseRareExoticPets = "Обзор редких экзотических животных";
+        msgBrowseRareExoticPets = "Обзор редких экзотических питомцев";
         msgUnlearnHunterAbilities = "Забыть способности охотника";
         msgVisitStable = "Посетить конюшню";
-        msgBuyPetFood = "Купить корм для животных";
+        msgBuyPetFood = "Купить корм для питомца";
         break;
     }
     default:
@@ -223,17 +225,17 @@ void NpcBeastmaster::GossipSelect(Player* player, Creature* creature, uint32 act
     {
     case LOCALE_ruRU:
     {
-        msgBrowsePets = "Обзор животных";
-        msgBrowseRarePets = "Обзор редких животных";
-        msgBrowseExoticPets = "Обзор экзотических животных";
-        msgBrowseRareExoticPets = "Обзор редких экзотических животных";
+        msgBrowsePets = "Обзор питомцев";
+        msgBrowseRarePets = "Обзор редких питомцев";
+        msgBrowseExoticPets = "Обзор экзотических питомцев";
+        msgBrowseRareExoticPets = "Обзор редких экзотических питомцев";
         msgUnlearnHunterAbilities = "Забыть способности охотника";
         msgVisitStable = "Посетить конюшню";
-        msgBuyPetFood = "Купить корм для животных";
+        msgBuyPetFood = "Купить корм для питомца";
         msgBack = "Назад";
         msgPrevious = "Предыдущая";
         msgNext = "Следующая";
-        msgTaughtOk = "Я научил тебя искусству повеления животными, ";
+        msgTaughtOk = "Я обучил тебя искусству упраления питомцами, ";
         break;
     }
     default:
@@ -444,9 +446,11 @@ void NpcBeastmaster::CreatePet(Player* player, Creature* creature, uint32 action
     case LOCALE_ruRU:
     {
         messageAdopt = Acore::StringFormatFmt("Прекрасный выбор {}! Берегите {} и вам никогда не придется сражаться с врагами в одиночку.", player->GetName(), pet->GetName());
+        break;
     }
     default:
         messageAdopt = Acore::StringFormatFmt("A fine choice {}! Take good care of your {} and you will never face your enemies alone.", player->GetName(), pet->GetName());
+        break;
     }
     creature->Whisper(messageAdopt.c_str(), LANG_UNIVERSAL, player);
     CloseGossipMenuFor(player);
