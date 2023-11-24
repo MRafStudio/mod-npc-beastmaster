@@ -118,8 +118,14 @@ INSERT INTO npc_vendor (entry, item) VALUES
 (@Entry,21024); -- Chimaerok Tenderloin
 
 -- NPC World ADD Allance
-INSERT INTO `pb_acore_world`.`creature` (`guid`, `id1`, `id2`, `id3`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `ScriptName`, `VerifiedBuild`, `CreateObject`, `Comment`) VALUES (3110424, 601026, 0, 0, 0, 0, 0, 1, 1, 1, -9115.15, 422.276, 93.9155, 4.73547, 300, 0, 0, 5342, 0, 0, 0, 0, 0, '', NULL, 0, NULL) ON DUPLICATE KEY UPDATE guid=guid;
+--INSERT INTO `creature` (`guid`, `id1`, `id2`, `id3`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `ScriptName`, `VerifiedBuild`, `CreateObject`, `Comment`) VALUES (3110424, 601026, 0, 0, 0, 0, 0, 1, 1, 1, -9115.15, 422.276, 93.9155, 4.73547, 300, 0, 0, 5342, 0, 0, 0, 0, 0, '', NULL, 0, NULL) ON DUPLICATE KEY UPDATE guid=guid;
+
+-- NPC World REMOVE Alliancce
+-- DELETE FROM `creature` WHERE `guid` = 3110424;
 
 -- NPC World ADD Horde
-INSERT INTO `pb_acore_world`.`creature` (`guid`, `id1`, `id2`, `id3`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `ScriptName`, `VerifiedBuild`, `CreateObject`, `Comment`) VALUES (3110425, 601026, 0, 0, 1, 0, 0, 1, 1, 1, 1514.82, -4445.47, 21.1929, 1.24594, 300, 0, 0, 5342, 0, 0, 0, 0, 0, '', NULL, 0, NULL) ON DUPLICATE KEY UPDATE guid=guid;
+--INSERT INTO `creature` (`guid`, `id1`, `id2`, `id3`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `ScriptName`, `VerifiedBuild`, `CreateObject`, `Comment`) VALUES (3110425, 601026, 0, 0, 1, 0, 0, 1, 1, 1, 1514.82, -4445.47, 21.1929, 1.24594, 300, 0, 0, 5342, 0, 0, 0, 0, 0, '', NULL, 0, NULL) ON DUPLICATE KEY UPDATE guid=guid;
+
+-- NPC World REMOVE Horde
+-- DELETE FROM `creature` WHERE `guid` = 3110425;
 
