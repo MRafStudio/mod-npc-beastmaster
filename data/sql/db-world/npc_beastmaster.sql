@@ -25,6 +25,10 @@ DELETE FROM creature_template WHERE entry = @Entry;
 INSERT INTO creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, speed_walk, speed_run, scale, `rank`, unit_class, unit_flags, type, type_flags, RegenHealth, flags_extra, AiName, ScriptName) VALUES
 (@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, 1, 1.14286, @Scale, @Rank, 1, 2, @Type, @TypeFlags, 1, @FlagsExtra, @AIName, @Script);
 
+-- NPC Locale
+DELETE FROM `creature_template_locale` WHERE entry = @Entry;
+INSERT INTO `creature_template_locale` (`entry`, `locale`, `Name`, `Title`, `VerifiedBuild`) VALUES (@Entry, 'ruRU', 'Белый клык', 'Повелитель зверей', 1);
+
 -- NPC EQUIPPED
 DELETE FROM `creature_equip_template` WHERE `CreatureID`=@Entry AND `ID`=1;
 INSERT INTO `creature_equip_template` VALUES (@Entry, 1, 2196, 1906, 0, 18019); -- Haunch of Meat, Torch
@@ -112,3 +116,10 @@ INSERT INTO npc_vendor (entry, item) VALUES
 (@Entry,33875), -- Kibler's Bits
 -- RARE
 (@Entry,21024); -- Chimaerok Tenderloin
+
+-- NPC World ADD Allance
+INSERT INTO `pb_acore_world`.`creature` (`guid`, `id1`, `id2`, `id3`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `ScriptName`, `VerifiedBuild`, `CreateObject`, `Comment`) VALUES (3110424, 601026, 0, 0, 0, 0, 0, 1, 1, 1, -9115.15, 422.276, 93.9155, 4.73547, 300, 0, 0, 5342, 0, 0, 0, 0, 0, '', NULL, 0, NULL) ON DUPLICATE KEY UPDATE guid=guid;
+
+-- NPC World ADD Horde
+INSERT INTO `pb_acore_world`.`creature` (`guid`, `id1`, `id2`, `id3`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `wander_distance`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `unit_flags`, `dynamicflags`, `ScriptName`, `VerifiedBuild`, `CreateObject`, `Comment`) VALUES (3110425, 601026, 0, 0, 1, 0, 0, 1, 1, 1, 1514.82, -4445.47, 21.1929, 1.24594, 300, 0, 0, 5342, 0, 0, 0, 0, 0, '', NULL, 0, NULL) ON DUPLICATE KEY UPDATE guid=guid;
+
